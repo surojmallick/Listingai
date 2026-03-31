@@ -1,0 +1,46 @@
+{
+  "entities": {
+    "Listing": {
+      "title": "Listing",
+      "description": "A generated product listing for an e-commerce platform.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "platform": { "type": "string", "enum": ["meesho", "flipkart"] },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "keywords": { "type": "string" },
+        "keyFeatures": { "type": "string" },
+        "additionalFeatures": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "productDetails": { "type": "string" },
+        "category": { "type": "string" }
+      },
+      "required": ["userId", "platform", "title", "description", "createdAt"]
+    },
+    "User": {
+      "title": "User",
+      "description": "User profile and settings.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "geminiApiKey": { "type": "string" },
+        "openaiApiKey": { "type": "string" },
+        "preferredModel": { "type": "string", "enum": ["gemini", "openai"] }
+      },
+      "required": ["uid", "email"]
+    }
+  },
+  "firestore": {
+    "/listings/{listingId}": {
+      "schema": "Listing",
+      "description": "Collection of generated product listings."
+    },
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User settings and profile data."
+    }
+  }
+}

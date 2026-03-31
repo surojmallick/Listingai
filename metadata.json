@@ -1,0 +1,7 @@
+{
+  "name": "E-com SEO Listing Pro",
+  "description": "Expert Meesho and Flipkart SEO listing generator for high-ranking product descriptions, titles, and keywords.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
